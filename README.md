@@ -1,1 +1,2 @@
 # VJ---Adaboost-Face-Detection_ECEN649
+In this project, an implement of Viola-Jones algorithm for face detection is presented. The dataset is from CMU containing both face and non-face figures. There's a training set used for extracting Harr features and build several weak classifiers and then applying these to arrive at a final classifier. The testing set is used for evaluating the accuracy of Viola-Jones algorithm.nmhjbv
