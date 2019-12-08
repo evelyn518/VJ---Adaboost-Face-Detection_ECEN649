@@ -231,6 +231,169 @@ In your report, you need to include:
  <br>Threshold: 0.5555
  <br>Training accuracy: 0.61
 
+adaboost algorithm for binary classification
+```
+    def adaboost(self):
+        #some important place-parameter
+        m=len(self.training_labels[self.training_labels==0]) #number of negative example
+        l=len(self.training_labels[self.training_labels==1]) #number of positive example
+        n=len(self.training_labels)
+        J=len(self.training_haar_features)
+        # initialize weights for the first weak classifier
+        W = [0.5 / l if self.training_labels[i] == 1 else 0.5 / m for i in range(n)]
+        for t in range(self.T):
+            # training T weak classifier
+            # choose the feature with smallest error as the feature of this weak classifier
+            # do J loops
+            W = [i / sum(W) for i in W]  # normalize weights
+            # compute the total number of positive and negative example
+            t_pos = 0
+            t_neg = 0
+            for _w, _y in zip(W, self.training_labels):
+                if _y == 1:
+                    t_pos += _w
+                else:
+                    t_neg += _w
+            t_error=np.float('+inf')
+            t_direction=None
+            t_theta=None
+            t_h=None
+            t_feature_area=None
+            _j = 0  # record the position of the best feature
+            for j in range(J):
+                # do we need a judgement to filter the features we have picked?
+                if j not in self.best_index:
+                    f = self.training_haar_features[j]
+                    # Each round of boosting selects one feature from the potential features
+                    # initialize the error as positive infinite
+                    j_error=np.float('+inf')
+                    j_direction=None
+                    j_theta=None
+                    # sort the data by feature value
+                    combined_date=sorted(zip(f,W,self.training_labels),key=lambda x:x[0])
+                    s_pos=0
+                    s_neg=0
+                    pos_appear=0
+                    neg_appear=0
+                    for _f,_w,_y in combined_date:
+                        # searching for the proper theta with which the minimunm error is obtained
+                        #we cannot say which direction,> or <, is better
+                        #so we should put both direction into judgement
+                        v_error=min(s_pos+t_neg-s_neg,s_neg+t_pos-s_pos)
+                        #judge which direction is better
+                        if v_error<j_error: #selecting the mimimum error and record the theta and direction
+                            j_error=v_error
+                            j_theta=_f
+                            j_direction=1 if neg_appear>pos_appear else -1
+                        if _y==1:
+                            s_pos+=_w
+                            pos_appear+=1
+                        else:
+                            s_neg+=_w
+                            neg_appear+=1
+                    #obtain the best features with which weak classifier has the minimun error
+                    if j_error<t_error:
+                        t_error=j_error
+                        t_theta=j_theta
+                        t_direction=j_direction
+                        t_feature_area=self.feature_areas[j]
+                        _j=j
+                    if j%1000==0:
+                        print('loop {}: {:.2f}% features have been fitted'.format(t,100*j/J))
+            # calculating beta and alpha in this loop
+            t_h=[1 if self.training_haar_features[_j][i]*t_direction>t_theta*t_direction else 0 for i in range(n)]
+            print(t_error)
+            t_beta=t_error/(1-t_error)
+            t_alpha=math.log(1/t_beta)
+            # updating weights
+            # increasing the weights of which are misclassified
+            W=[W[i]*t_beta if t_h[i]!=self.training_labels[i] else W[i] for i in range(n)]
+            # put together these parameters
+            self.theta_best.append(t_theta)
+            self.direction_best.append(t_direction)
+            self.alpha.append(t_alpha)
+            self.error.append(t_error)
+            self.feature_areas_best.append(t_feature_area)
+            self.best_index.append(_j)
+            print('{}th weak classifier training have completed'.format(t))
+            t_a,f_n,f_p=self.cor_rate()
+            print('Till now, the total_accurancy of classifier is {:.3f}'.format(t_a))
+            print('Till now, the false_neg_rate of classifier is {:.3f}'.format(f_n))
+            print('Till now, the false_pos_rate of classifier is {:.3f}'.format(f_p))
+            print('Feature number:{}'.format(_j))
+            print('Type:{}'.format(self.areas_label[_j]))
+            print('Threshold:{}'.format(t_theta))
+            print('position:',t_feature_area)
+            self.test_haar_features=[]
+    def cor_rate(self):
+        # select top 200 features which have the smaller error
+        for i in range(len(self.test_image_features)):
+            integeralGraph =self.test_ii[i]
+            haarFeatures = self.calHaarFeatures(integeralGraph,self.feature_areas_best)
+            self.test_haar_features.append(haarFeatures)
+        self.test_haar_features=np.transpose(self.test_haar_features)
+        # set up an empty list to store the y-value of prediction
+        y_pre=[]
+        # set up threshold
+        sum_alpha=0.5*sum(self.alpha)
+        # make prediction
+        for i in range(len(self.test_labels)):
+            # empty variables for prediction-value of each weak classifier
+            y_hat = None
+            sum_pre = 0
+            # make prediction for each test examples
+            for t in range(len(self.best_index)):
+                if self.test_haar_features[t][i]*self.direction_best>self.theta_best[t]*self.direction_best:
+                    y_hat=1
+                else:
+                    y_hat=0
+                sum_pre+=y_hat*self.alpha[t]
+            if sum_pre>=sum_alpha:
+                y_pre.append(1)
+            else:
+                y_pre.append(0)
+        y_pre=np.array(y_pre)
+        # calculate accuracy for test-data
+        y_pos=y_pre[np.array(self.test_labels)==1]
+        y_neg=y_pre[np.array(self.test_labels)==0]
+        false_neg=(len(y_pos)-sum(y_pos))/len(y_pos)
+        false_pos=sum(y_neg)/len(y_neg)
+        is_cor=[1 if y_pre[i]==self.test_labels[i] else 0 for i in range(len(self.test_labels))]
+        cor_rate=sum(is_cor)/len(is_cor)
+        return cor_rate,false_neg,false_pos
+    # extracting data and tranform it into proper form
+    # the shape of features should be (J,n)
+    # J is the number of haar-like features
+    # n is the number of images
+    def data_generate(self):
+        # only need calculate all haar-like features of training-data
+        # for test-data only features of best-feature-areas are needed
+        self.getHaarFeaturesArea(self.training_image_features.shape[1],self.training_image_features.shape[2])
+        for i in range(len(self.training_image_features)):
+            integeralGraph = self.integral_image(self.training_image_features[i])
+            haarFeatures = self.calHaarFeatures(integeralGraph,self.feature_areas)
+            self.training_haar_features.append(haarFeatures)
+        self.training_haar_features=np.transpose(self.training_haar_features)
+        for i in range(len(self.test_image_features)):
+            integeralGraph=self.integral_image(self.test_image_features[i])
+            self.test_ii.append(integeralGraph)
+    # make prediction
+    def predict(self,image):
+        integeralGraph = self.integral_image(image)
+        haarFeatures = self.calHaarFeatures(integeralGraph, self.feature_areas_best)
+        sum_alpha = 0.5 * sum(self.alpha)
+        sum_pre=0
+        for t in range(len(self.best_index)):
+            if haarFeatures[t]*self.direction_best>self.theta_best[t]*self.direction_best:
+                y_hat=1
+            else:
+                y_hat=0
+            sum_pre += y_hat * self.alpha[t]
+        if sum_pre>sum_alpha:
+            print('This image is a face-image')
+        else:
+            print('This image is not a face-image')
+```
 #### 3. Adjust the threshold
 In the real world, there are different standards for the face detection system. We may want to eliminate as much false alarm
 as possible in daily life, for example, we can tolerate not being recognized as a face but cannot tolerate the whole environment
