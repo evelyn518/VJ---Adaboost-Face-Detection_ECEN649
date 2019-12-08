@@ -437,7 +437,6 @@ Give examples
  <br>Training accuracy: 0.801192
  <br>False negative: 0.121328
  <br>False postive: 0.077480
- 
 ![Feature for 1 round Adaboost](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/images%20for%20vj/294171922150336951.png?raw=true)  
 
 • Feature number 1:
@@ -459,7 +458,7 @@ Give examples
  <br>Threshold: 28
  <br>Training accuracy: 0.756066
  <br>False negative: 0.131545
- <br>False postive: 0.112388
+ <br>False postive: 0.112388 
 ![Feature for 5 rounds Adaboost](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/images%20for%20vj/867020202641414758.png?raw=true)  
 
 • Feature number 1:
@@ -470,7 +469,7 @@ Give examples
  <br>Threshold: -3251
  <br>Training accuracy: 0.756066
  <br>False negative: 0.131545
- <br>False postive: 0.112388
+ <br>False postive: 0.112388 
 ![Feature for 10 rounds Adaboost](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/images%20for%20vj/105990036188532545.png)
 
 
