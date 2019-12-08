@@ -66,17 +66,10 @@ Firstly, set global variables
         # the integral image of test_examples
         self.test_ii=[]
 ```
-Fast calculate haar-like features by integral image
+Fast calculate haar-like features by integral image. Initialize the integral image as zeros with the same size of original image and then iterate.
 ```
     def integral_image(self,im):
-        '''
-        :param im:
-        :return:intergral image of im
-        '''
-        # initialize the integral image as zeros
-        #with the same size of original image
         ii=np.zeros((im.shape[0],im.shape[1]),dtype=np.int32)
-        #iterating
         for x in range(im.shape[0]):
             #initialize  the cumulative row sum as zero
             sum_r=0
@@ -85,13 +78,12 @@ Fast calculate haar-like features by integral image
                 ii[x][y]=ii[x-1][y]+sum_r
         return ii
 ```
+Input: the variable list you want to save.
+Save the loaded data.
 
 ```
     def saveVariable(self,filename):
         """
-        This function is going to save the loaded data
-        Input is the variable list you want to save 
-
         with open('original'+'.pickle', 'wb') as f:  # Python 3: open(..., 'wb')
             pickle.dump(self.data, f)
         f.close()
