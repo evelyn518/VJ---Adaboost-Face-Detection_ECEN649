@@ -153,7 +153,70 @@ Input: the variable list you want to save.
                     i+=1
         self.feature_areas=feature_areas
 ```
+Function: count the feature value according to feature-areas we have figured out
+Feature_areas are stores into two parts, that is positive area and negative area
+each area has the same size [x,y,w,h]
 
+```
+    def compute_feature(self,ii,feature_area):
+        w,h,i,j=feature_area
+        return ii[w+i][h+j]+ii[w][h]-ii[w+i][h]-ii[w][h+j]
+    def calHaarFeatures(self,ii,feature_areas):
+        haarFeatures = []
+        for pos_area,neg_area in feature_areas:
+            haar_value=sum([self.compute_feature(ii,pos) for pos in pos_area])-sum(
+                [self.compute_feature(ii,neg) for neg in neg_area]
+            )
+            haarFeatures.append(haar_value)
+        return haarFeatures
+    def load_image(self):
+        image_dir=r'C:\Users\gaoru\Desktop\dataset\dataset'
+        #training_set
+        file_face = os.path.join(image_dir, "trainset", "faces", '*.' + 'png')
+        file_non_face = os.path.join(image_dir, "trainset", "non-faces", '*.' + 'png')
+        face_list = []
+        face_list.extend(glob.glob(file_face))
+        non_face_list = []
+        non_face_list.extend(glob.glob(file_non_face))
+        #test_set
+        # prefix t_ represent the test_data
+        t_file_face = os.path.join(image_dir, "testset", "faces", '*.' + 'png')
+        t_file_non_face = os.path.join(image_dir, "testset", "non-faces", '*.' + 'png')
+        t_face_list = []
+        t_face_list.extend(glob.glob(t_file_face))
+        t_non_face_list = []
+        t_non_face_list.extend(glob.glob(t_file_non_face))
+        #integrating data
+        face_images=np.array([self.read_and_transform(filename) for filename in face_list]) #type as ndarry
+        non_face_images=np.array([self.read_and_transform(filename) for filename in non_face_list]) #non-face data
+        face_labels=np.ones((len(face_images),)) #labelize face-data
+        non_face_labels=np.zeros((len(non_face_images),)) #labelize non-face-data
+        # same operation as training_data
+        t_face_images=np.array([self.read_and_transform(filename) for filename in t_face_list])
+        t_non_face_images=np.array([self.read_and_transform(filename) for filename in t_non_face_list])
+        t_face_labels=np.ones((len(t_face_images),))
+        t_non_face_labels=np.zeros((len(t_non_face_images),))
+        #integrating face and non-face data
+        features=np.concatenate((face_images,non_face_images),axis=0)
+        labels=np.concatenate((face_labels,non_face_labels),axis=0)
+        t_features=np.concatenate((t_face_images,t_non_face_images),axis=0)
+        t_labels=np.concatenate((t_face_labels,t_non_face_labels),axis=0)
+        #shuffle data
+        index=[i for i in range(len(features))]
+        random.shuffle(index)
+        features=features[index]
+        labels=labels[index]
+        # color dimention added
+        features=np.reshape(features,[-1,19,19,1]) #the 4th-dimention is the color dimention
+        t_features=np.reshape(t_features,[-1,19,19,1]) #that the 4th-dimention equals 1 means  images is only grey
+        self.training_image_features,self.training_labels,self.test_image_features,self.test_labels=\
+            features,labels,t_features,t_labels
+    #image into ndarray
+    def read_and_transform(self,filename):
+        image = imread(filename)
+        #resize_image=resize(image)
+        return np.array(image)
+```
 #### 2. Build Adaboost Detector
 After extracting the features, employ the AdaBoost algorithm and find the detector with 1, 3, 5, 10 rounds. For each different
 detector, you need to show the feature you choose, the threshold you have, and at last, draw your top one feature for each
