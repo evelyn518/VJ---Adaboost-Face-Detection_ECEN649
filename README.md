@@ -79,7 +79,7 @@ Fast calculate haar-like features by integral image. Initialize the integral ima
         return ii
 ```
 Input: the variable list you want to save.
-Save the loaded data.
+<br>Save the loaded data.
 
 ```
     def saveVariable(self,filename):
@@ -104,6 +104,56 @@ Save the loaded data.
                 except:
                     raise Exception()
 ```
+ Figure out all the area needed for calculation——horizontal and vertical moving or expanding
+ For simplicity, only take two-rectangle feature into a count,initializing with right and left two rectangle
+ ```
+     def getHaarFeaturesArea(self,width,height):
+        '''
+        :param width: original image width
+        :param height: original image height
+        :return: every sub-windows needed to calculate feature-value
+        '''
+        #the size-limit of sub-windows
+        feature_areas=[]
+        for w in range(1,width):
+            for h in range(1,height):
+                i=0
+                while w+i<width:
+                    j=0
+                    while h+j<height:
+                        top_left=[w,h,i,j]
+                        #two_rectangle feature-areas
+                        #vertically adjacent
+                        if w+2*i<width:
+                            bottom_left=[w+i,h,i,j]
+                            feature_areas.append(([top_left],[bottom_left]))
+                            self.areas_label.append('two_rectangle')
+                        # horizontally adjacent
+                        if h+2*j<height:
+                            top_right=[w,h+j,i,j]
+                            feature_areas.append(([top_left],[top_right]))
+                            self.areas_label.append('two_rectangle')
+                        #three_rectangle feature-areas
+                        #vertically adjacent
+                        if w+3*i<width:
+                            bottom_left2=[w+2*i,h,i,j]
+                            feature_areas.append(([top_left,bottom_left2],[bottom_left,bottom_left]))
+                            self.areas_label.append('three_rectangle')
+                        # horizontally adajacent
+                        if h+3*j<height:
+                            top_right2=[w,h+2*j,i,j]
+                            feature_areas.append(([top_left, top_right2], [top_right, top_right]))
+                            self.areas_label.append('three_rectangle')
+                        #four_rectangle_feature_areas
+                        if w+2*i<width and h+2*j<height:
+                            bottom_right=[w+i,h+j,i,j]
+                            feature_areas.append(([top_left,bottom_right],[top_right,bottom_left]))
+                            self.areas_label.append('four_rectangle')
+                        j+=1
+                    i+=1
+        self.feature_areas=feature_areas
+```
+
 #### 2. Build Adaboost Detector
 After extracting the features, employ the AdaBoost algorithm and find the detector with 1, 3, 5, 10 rounds. For each different
 detector, you need to show the feature you choose, the threshold you have, and at last, draw your top one feature for each
