@@ -437,9 +437,9 @@ Give examples
  <br>Training accuracy: 0.801192
  <br>False negative: 0.121328
  <br>False postive: 0.077480
-''' 
+
 ![Feature for 1 round Adaboost](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/images%20for%20vj/294171922150336951.png?raw=true)  
-'''
+
 • Feature number 1:
  <br>Type: Two Horizontal
  <br>Position: (3,2),(3,6)
