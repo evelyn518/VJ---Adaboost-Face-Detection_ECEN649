@@ -9,15 +9,15 @@ This implement of VJ face detection requires python version 3.7, and the followi
 
 |module|version|usage|
 |:--|:--|:--|
-numpy|1.16.2|for scientific computing, supporting large, multidimensional arrays and matrices
+numpy|1.17.3|for scientific computing, supporting large, multidimensional arrays and matrices
 os||for loading and generating data
-glob|0.6|for shuffling data
 math||for access to the mathematical functions defined by the C standard
-random||for shuffling data to generate training and testing sets
-glob||for finding all the pathnames matching a specified pattern according to the rules used by the Unix shell
-imageio||for providing an easy interface to read and write a wide range of image data
+random|1.1.0|for shuffling data to generate training and testing sets
+glob|3.5|for finding all the pathnames matching a specified pattern according to the rules used by the Unix shell
+imageio|2.6.1|for providing an easy interface to read and write a wide range of image data
 skimage.transform||for resizing image to match a certain size 19*19
-pickle|1.0.0|for saving variable, debugging, saving the time of generating and load data 
+pickle|2.5|for saving variable, debugging, saving the time of generating and load data
+ 
 
 ### Usage 
 #### (1). Create virtual env
