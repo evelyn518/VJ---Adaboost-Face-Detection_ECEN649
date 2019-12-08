@@ -418,6 +418,7 @@ Give examples
 
 ## Evaluation
 ### 1. Extract Haar Features
+![Image description](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/images%20for%20vj/249614056558366183.png)
 
 ### 2. Build Adaboost Detector
 
