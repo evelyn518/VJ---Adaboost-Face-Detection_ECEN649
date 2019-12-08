@@ -438,7 +438,7 @@ Give examples
  <br>False negative: 0.121328
  <br>False postive: 0.077480
  
-![Feature for 1 round Adaboost](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/images%20for%20vj/249614056558366183.png)  
+![Feature for 1 round Adaboost](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/images%20for%20vj/294171922150336951.png?raw=true)  
 
 • Feature number 1:
  <br>Type: Two Horizontal
@@ -449,7 +449,7 @@ Give examples
  <br>Training accuracy: 0.718178
  <br>False negative: 0.115368
  <br>False postive: 0.166454
-![Feature for 3 rounds Adaboost](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/images%20for%20vj/249614056558366183.png)  
+![Feature for 3 rounds Adaboost](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/images%20for%20vj/5619714554937557.png?raw=true)  
 
 • Feature number 1:
  <br>Type: Two Horizontal
@@ -460,7 +460,7 @@ Give examples
  <br>Training accuracy: 0.756066
  <br>False negative: 0.131545
  <br>False postive: 0.112388
-![Feature for 5 rounds Adaboost](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/images%20for%20vj/249614056558366183.png)  
+![Feature for 5 rounds Adaboost](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/images%20for%20vj/867020202641414758.png?raw=true)  
 
 • Feature number 1:
  <br>Type: Two Horizontal
@@ -471,7 +471,7 @@ Give examples
  <br>Training accuracy: 0.756066
  <br>False negative: 0.131545
  <br>False postive: 0.112388
-![Feature for 10 rounds Adaboost](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/images%20for%20vj/249614056558366183.png)
+![Feature for 10 rounds Adaboost](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/images%20for%20vj/105990036188532545.png)
 
 
 ### 3. Adjust the threshold
