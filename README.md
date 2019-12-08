@@ -20,16 +20,16 @@ skimage.transform||for resizing image to match a certain size 19*19
 pickle|1.0.0|for saving variable, debugging, saving the time of generating and load data 
 
 ### Usage 
-#### 1.Create virtual env
+#### 1. Create virtual env
     $ python -m venv FaceDetection
     
-#### 2.Install by using the 'requirements.txt'
+#### 2. Install by using the 'requirements.txt'
     $ pip install -r 'requirements.txt'
     
-#### 3.Cd to the path and activate
+#### 3. Cd to the path and activate
     $ cd FaceDetection/Scripts/
     $ activate.bat
-#### 4.Run the code
+#### 4. Run the code
 
 ### Project Missions
 #### Extract Haar Features
