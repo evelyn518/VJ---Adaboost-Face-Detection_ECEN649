@@ -19,18 +19,16 @@ imageio|1.0.0|
 skimage.transform|1.0.0|
 
 ### Usage 
-[TOC]
-
-## Create virtual env
+1.Create virtual env
     $ python -m venv FaceDetection
     
-## Install by using the 'requirements.txt'
+2.Install by using the 'requirements.txt'
     $ pip install -r 'requirements.txt'
     
-## Cd to the path and activate
+3. Cd to the path and activate
     $ cd FaceDetection/Scripts/
     $ activate.bat
-## Run the code
+4. Run the code
 
 
 
