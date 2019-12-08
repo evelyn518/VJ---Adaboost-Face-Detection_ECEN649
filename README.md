@@ -45,6 +45,73 @@ The total number of Haar Features is: *****.
 4.	There are **** type 4 (three vertical) features.
 5.	There are **** type 5 (four) features.
 
+Firstly, set global variables
+```
+    def __init__(self,T=10):
+        # set global variables
+        self.training_image_features=None
+        self.training_haar_features=[]
+        self.test_image_features=None
+        self.test_haar_features=[]
+        self.training_labels=None
+        self.test_labels=None
+        self.theta_best=[]
+        self.direction_best=[]
+        self.alpha=[]
+        self.error=[]
+        self.best_index=[]
+        self.T=T  #number of weak classifier
+        self.feature_areas=[]
+        self.feature_areas_best=[]
+        # the integral image of test_examples
+        self.test_ii=[]
+```
+Fast calculate haar-like features by integral image
+```
+    def integral_image(self,im):
+        '''
+        :param im:
+        :return:intergral image of im
+        '''
+        # initialize the integral image as zeros
+        #with the same size of original image
+        ii=np.zeros((im.shape[0],im.shape[1]),dtype=np.int32)
+        #iterating
+        for x in range(im.shape[0]):
+            #initialize  the cumulative row sum as zero
+            sum_r=0
+            for y in range(im.shape[1]):
+                sum_r=sum_r+im[x][y]
+                ii[x][y]=ii[x-1][y]+sum_r
+        return ii
+```
+
+```
+    def saveVariable(self,filename):
+        """
+        This function is going to save the loaded data
+        Input is the variable list you want to save 
+
+        with open('original'+'.pickle', 'wb') as f:  # Python 3: open(..., 'wb')
+            pickle.dump(self.data, f)
+        f.close()
+        """
+        if filename:
+            for file in filename:
+                with open(file+'.pickle', 'wb') as f:  # Python 3: open(..., 'wb')
+                    exec(source='pickle.dump('+ 'self.'+ file + ', f)')
+                f.close()
+    def loadVariable(self,filename):
+        if filename:
+            for file in filename:
+                try:
+                    with open(file+'.pickle', 'rb') as f:  # Python 3: open(..., 'wb')
+                        # eval('self.' + filename + '=pickle.load(f)')
+                        exec(source='self.' + file + '=pickle.load(f)')
+                    f.close()
+                except:
+                    raise Exception()
+```
 #### 2. Build Adaboost Detector
 After extracting the features, employ the AdaBoost algorithm and find the detector with 1, 3, 5, 10 rounds. For each different
 detector, you need to show the feature you choose, the threshold you have, and at last, draw your top one feature for each
