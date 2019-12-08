@@ -427,7 +427,52 @@ Give examples
  <b>4.	There are **** type 4 (three vertical) features.  
  <b>5.	There are **** type 5 (four) features.  
 
-### 2. Build Adaboost Detector
+### 2. Build Adaboost Detector  
+• Feature number 1:
+ <br>Type: Two Horizontal
+ <br>Position: (10,3),(9,3)
+ <br>Width: 1
+ <br>Length: 3
+ <br>Threshold: -33
+ <br>Training accuracy: 0.801192
+ <br>False negative: 0.121328
+ <br>False postive: 0.077480
+ 
+![Feature for 1 round Adaboost](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/images%20for%20vj/249614056558366183.png)  
+
+• Feature number 1:
+ <br>Type: Two Horizontal
+ <br>Position: (3,2),(3,6)
+ <br>Width: 1
+ <br>Length: 4
+ <br>Threshold: -112
+ <br>Training accuracy: 0.718178
+ <br>False negative: 0.115368
+ <br>False postive: 0.166454
+![Feature for 3 rounds Adaboost](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/images%20for%20vj/249614056558366183.png)  
+
+• Feature number 1:
+ <br>Type: Two Horizontal
+ <br>Position: (8,5),(7,9),(7,5),(8,9)
+ <br>Width: 1
+ <br>Length: 4
+ <br>Threshold: 28
+ <br>Training accuracy: 0.756066
+ <br>False negative: 0.131545
+ <br>False postive: 0.112388
+![Feature for 5 rounds Adaboost](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/images%20for%20vj/249614056558366183.png)  
+
+• Feature number 1:
+ <br>Type: Two Horizontal
+ <br>Position: (11,2),(14,2),(8,2)
+ <br>Width: 3
+ <br>Length: 7
+ <br>Threshold: -3251
+ <br>Training accuracy: 0.756066
+ <br>False negative: 0.131545
+ <br>False postive: 0.112388
+![Feature for 10 rounds Adaboost](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/images%20for%20vj/249614056558366183.png)
+
 
 ### 3. Adjust the threshold
 ### 4. Build the cascading system
