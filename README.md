@@ -477,7 +477,27 @@ Give examples
 ![Feature for 10 rounds Adaboost](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/images%20for%20vj/105990036188532545.png)
 
 
-### 3. Adjust the threshold
+### 3. Adjust the threshold  
+
+<b>(1) Choose empirical error as criterion  
+ 
+ ![1](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/images%20for%20vj/Barcelona-star-Lionel-Messi-scored-a-hat-trick-against-RCD-Mallorca-1214446.jpg?raw=true)
+ 
+<b>(2) Choose false postive as criterion  
+ 
+ ![1](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/images%20for%20vj/Barcelona-star-Lionel-Messi-scored-a-hat-trick-against-RCD-Mallorca-1214446.jpg?raw=true)  
+ 
+<b>(3) Choose false negative as criterion  
+ 
+ ![1](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/images%20for%20vj/Barcelona-star-Lionel-Messi-scored-a-hat-trick-against-RCD-Mallorca-1214446.jpg?raw=true)  
+ 
+<b>Table of different criterion  
+ 
+|Criterion|Total Accuracy|False Positive|False Negative|
+|:--|:--|:--|:--
+numpy|1.17.3|for scientific computing, supporting large, multidimensional arrays and matrices
+os||for loading and generating data
+
 ### 4. Detecting in real-world photos
 Orginal photo1:  
 
