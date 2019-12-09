@@ -17,6 +17,7 @@ glob|3.5|for finding all the pathnames matching a specified pattern according to
 imageio|2.6.1|for providing an easy interface to read and write a wide range of image data
 skimage.transform||for resizing image to match a certain size 19*19
 pickle|2.5|for saving variable, debugging, saving the time of generating and load data
+cv2|
  
 
 ### Usage 
