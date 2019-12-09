@@ -22,15 +22,11 @@ cv2|
 
 ### Usage 
 #### (1). Create virtual env
-    $ python -m venv FaceDetection
     
 #### (2). Install by using the 'requirements.txt'
     $ pip install -r 'requirements.txt'
-    
-#### (3). Cd to the path and activate
-    $ cd FaceDetection/Scripts/
-    $ activate.bat
-#### (4). Run the code
+  
+#### (3). Run the code
 
 ### Project Missions
 #### 1. Extract Haar Features
