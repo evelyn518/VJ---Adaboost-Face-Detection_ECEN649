@@ -478,14 +478,41 @@ Give examples
 
 
 ### 3. Adjust the threshold
-### 4. Detectiing in real-world photos
+### 4. Detecting in real-world photos
 Orginal photo1:  
 
 ![1](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/images%20for%20vj/Barcelona-star-Lionel-Messi-scored-a-hat-trick-against-RCD-Mallorca-1214446.jpg?raw=true)  
 
-After detecting phto1:  
+After detecting photo1:  
 
-![1](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/after/674420501518072338.jpg?raw=true)
+![1](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/after/674420501518072338.jpg?raw=true)  
+
+Orginal photo2:  
+
+![2](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/images%20for%20vj/Barcelona-star-Lionel-Messi-scored-a-hat-trick-against-RCD-Mallorca-1214446.jpg?raw=true)  
+
+After detecting photo1:  
+
+![2](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/after/641611124257740203.jpg?raw=true)  
+
+Orginal photo3:  
+
+![3](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/images%20for%20vj/Barcelona-star-Lionel-Messi-scored-a-hat-trick-against-RCD-Mallorca-1214446.jpg?raw=true)  
+
+After detecting photo1:  
+
+![3](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/after/386615185158575392.jpg?raw=true)  
+
+Orginal photo4:  
+
+![4](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/images%20for%20vj/Barcelona-star-Lionel-Messi-scored-a-hat-trick-against-RCD-Mallorca-1214446.jpg?raw=true)  
+
+After detecting photo4:  
+
+![4](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/after/674420501518072338.jpg?raw=true)
+
+
+
 
 ## Future Work
 In this project, the classifers of the face detectors with 1,3,5,10 rounds built and adjusted the threshold. If time is avaliable, (改进算法)
