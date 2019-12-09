@@ -745,13 +745,14 @@ Open cv was used to read image and construt cascade classifers.
 
 The algorithm has four stages:  
 
-Haar Feature Selection  
+(1)Haar Feature Selection  
+(2)Creating an Integral Image  
+(3)Adaboost Training  
+(4)Cascading Classifiers  
 
-Creating an Integral Image  
+In cascading, each stage consists of a strong classifier. So all the features are grouped into several stages where each stage has certain number of features.
 
-Adaboost Training  
-
-Cascading Classifiers  
+The job of each stage is to determine whether a given sub-window is definitely not a face or may be a face. A given sub-window is immediately discarded as not a face if it fails in any of the stages.
 
 
 Orginal photo1:  
