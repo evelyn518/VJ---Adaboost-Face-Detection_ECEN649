@@ -438,14 +438,13 @@ happens?
 
 ## Evaluation
 ### 1. Extract Haar Features
-![Image description](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/images%20for%20vj/249614056558366183.png)
 
- <b>The total number of Haar Features is: *****.  
- <b>1.	There are **** type 1 (two vertical) features.  
- <b>2.	There are **** type 2 (two horizontal) features.  
- <b>3.	There are **** type 3 (three horizontal) features.  
- <b>4.	There are **** type 4 (three vertical) features.  
- <b>5.	There are **** type 5 (four) features.  
+ <b>The total number of Haar Features is: 60426.  
+ <b>1.	There are 15390 type 1 (two vertical) features.  
+ <b>2.	There are 15390 type 2 (two horizontal) features.  
+ <b>3.	There are 10773 type 3 (three horizontal) features.  
+ <b>4.	There are 10773 type 4 (three vertical) features.  
+ <b>5.	There are 8100 type 5 (four) features.  
 
 ### 2. Build Adaboost Detector  
 • Feature number 1:
