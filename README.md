@@ -570,13 +570,6 @@ Empirical Error|0.80|0.14|0.12
 False Positive|0.78|0.00|0.22
 False Negative|0.63|0.25|0.17
 
-If empricial error was chosen as criterion, with the increase of number of rounds, the total accuracy will increase and at the end round, it is about 0.80.  
-
-If false positive was chosen as criterion, with the increase of number of rounds, the total accuracy will decrease and at the end round, it is about 0.00.  
-
-If false negative was chosen as criterion, with the increase of number of rounds, the total accuracy will decrease and at the end round, it is about 0.17.  
-
-
 
 ### 4. Detecting in real-world photos
 
