@@ -442,6 +442,12 @@ happens?
  <b>3.	There are 10773 type 3 (three horizontal) features.  
  <b>4.	There are 10773 type 4 (three vertical) features.  
  <b>5.	There are 8100 type 5 (four) features.  
+  
+  (the total number of haar-like feature is 60426  
+the number of two_rectangle features is 30780  
+the number of three_rectangle features is 21546  
+the number of four_rectangle features is 8100)  
+two_rectrangle is combined by two vertical and two horizontals. The number of two vertical is the same as two horizontal.  
 
 ### 2. Build Adaboost Detector  
 • Feature number :
@@ -493,220 +499,46 @@ happens?
 ![Feature for 10 rounds Adaboost](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/images%20for%20vj/round10.png?raw=true)
 
 ```
-Computing integral images
-Building features
-Applying features to training examples
-Selecting best features
-Selected 5171 potential features
---------------------------------------------------------------------
-the 0 round adboost begin:
-Trained 1000 classifiers out of 5171
-Trained 2000 classifiers out of 5171
-Trained 3000 classifiers out of 5171
-Trained 4000 classifiers out of 5171
-Trained 5000 classifiers out of 5171
-Chose classifier: Weak Clf (threshold=-1019, polarity=1, [RectangleRegion(1, 2, 17, 3)], [RectangleRegion(1, 5, 17, 3)] with accuracy: 0.868221 and alpha: 6.281852
-the classifier on 2349 testing data have 1684 acc, 187 nf, 478 pf
-the acc rate is 0.716901, false negative is 0.079608, false postive is 0.203491
-[(1, 2, 17, 3),(1, 5, 17, 3)]
---------------------------------------------------------------------
-the 1 round adboost begin:
-Trained 1000 classifiers out of 5171
-Trained 2000 classifiers out of 5171
-Trained 3000 classifiers out of 5171
-Trained 4000 classifiers out of 5171
-Trained 5000 classifiers out of 5171
-Chose classifier: Weak Clf (threshold=-608, polarity=-1, [RectangleRegion(0, 0, 12, 5)], [RectangleRegion(0, 5, 12, 5)] with accuracy: 0.267145 and alpha: 6.899264
-the classifier on 2349 testing data have 974 acc, 355 nf, 1020 pf
-the acc rate is 0.414645, false negative is 0.151128, false postive is 0.434227
-[(0, 0, 12, 5),(0, 5, 12, 5)]
---------------------------------------------------------------------
-the 2 round adboost begin:
-Trained 1000 classifiers out of 5171
-Trained 2000 classifiers out of 5171
-Trained 3000 classifiers out of 5171
-Trained 4000 classifiers out of 5171
-Trained 5000 classifiers out of 5171
-Chose classifier: Weak Clf (threshold=-33, polarity=1, [RectangleRegion(10, 3, 1, 3)], [RectangleRegion(9, 3, 1, 3)] with accuracy: 0.823398 and alpha: 8.470672
-the classifier on 2349 testing data have 1882 acc, 285 nf, 182 pf
-the acc rate is 0.801192, false negative is 0.121328, false postive is 0.077480
-[(10, 3, 1, 3),(9, 3, 1, 3)]
---------------------------------------------------------------------
-the 3 round adboost begin:
-Trained 1000 classifiers out of 5171
-Trained 2000 classifiers out of 5171
-Trained 3000 classifiers out of 5171
-Trained 4000 classifiers out of 5171
-Trained 5000 classifiers out of 5171
-Chose classifier: Weak Clf (threshold=-10, polarity=-1, [RectangleRegion(10, 4, 1, 1)], [RectangleRegion(9, 4, 1, 1)] with accuracy: 0.220081 and alpha: 11.440892
-the classifier on 2349 testing data have 812 acc, 268 nf, 1269 pf
-the acc rate is 0.345679, false negative is 0.114091, false postive is 0.540230
-[(10, 4, 1, 1),(9, 4, 1, 1)]
---------------------------------------------------------------------
-the 4 round adboost begin:
-Trained 1000 classifiers out of 5171
-Trained 2000 classifiers out of 5171
-Trained 3000 classifiers out of 5171
-Trained 4000 classifiers out of 5171
-Trained 5000 classifiers out of 5171
-Chose classifier: Weak Clf (threshold=-112, polarity=1, [RectangleRegion(3, 2, 1, 4)], [RectangleRegion(3, 6, 1, 4)] with accuracy: 0.827880 and alpha: 8.805651
-the classifier on 2349 testing data have 1687 acc, 271 nf, 391 pf
-the acc rate is 0.718178, false negative is 0.115368, false postive is 0.166454
-[(3, 2, 1, 4),(3, 6, 1, 4)]
---------------------------------------------------------------------
-the 5 round adboost begin:
-Trained 1000 classifiers out of 5171
-Trained 2000 classifiers out of 5171
-Trained 3000 classifiers out of 5171
-Trained 4000 classifiers out of 5171
-Trained 5000 classifiers out of 5171
-Chose classifier: Weak Clf (threshold=28, polarity=-1, [RectangleRegion(8, 5, 1, 4), RectangleRegion(7, 9, 1, 4)], [RectangleRegion(7, 5, 1, 4), RectangleRegion(8, 9, 1, 4)] with accuracy: 0.810847 and alpha: 12.408780
-the classifier on 2349 testing data have 1776 acc, 309 nf, 264 pf
-the acc rate is 0.756066, false negative is 0.131545, false postive is 0.112388
-[(8, 5, 1, 4),(7, 9, 1, 4)],[(7, 5, 1, 4), (8, 9, 1, 4)]
---------------------------------------------------------------------
-the 6 round adboost begin:
-Trained 1000 classifiers out of 5171
-Trained 2000 classifiers out of 5171
-Trained 3000 classifiers out of 5171
-Trained 4000 classifiers out of 5171
-Trained 5000 classifiers out of 5171
-Chose classifier: Weak Clf (threshold=-30, polarity=1, [RectangleRegion(10, 3, 1, 3)], [RectangleRegion(9, 3, 1, 3)] with accuracy: 0.814433 and alpha: 8.174293
-the classifier on 2349 testing data have 1889 acc, 278 nf, 182 pf
-the acc rate is 0.804172, false negative is 0.118348, false postive is 0.077480
-[(10, 3, 1, 3),(9, 3, 1, 3)]
---------------------------------------------------------------------
-the 7 round adboost begin:
-Trained 1000 classifiers out of 5171
-Trained 2000 classifiers out of 5171
-Trained 3000 classifiers out of 5171
-Trained 4000 classifiers out of 5171
-Trained 5000 classifiers out of 5171
-Chose classifier: Weak Clf (threshold=-9, polarity=-1, [RectangleRegion(10, 3, 1, 4)], [RectangleRegion(9, 3, 1, 4)] with accuracy: 0.338413 and alpha: 13.159230
-the classifier on 2349 testing data have 1619 acc, 320 nf, 410 pf
-the acc rate is 0.689229, false negative is 0.136228, false postive is 0.174542
---------------------------------------------------------------------
-the 8 round adboost begin:
-Trained 1000 classifiers out of 5171
-Trained 2000 classifiers out of 5171
-Trained 3000 classifiers out of 5171
-Trained 4000 classifiers out of 5171
-Trained 5000 classifiers out of 5171
-Chose classifier: Weak Clf (threshold=-55, polarity=1, [RectangleRegion(10, 1, 1, 7)], [RectangleRegion(9, 1, 1, 7)] with accuracy: 0.815778 and alpha: 11.626915
-the classifier on 2349 testing data have 1805 acc, 327 nf, 217 pf
-the acc rate is 0.768412, false negative is 0.139208, false postive is 0.092380
---------------------------------------------------------------------
-the 9 round adboost begin:
-Trained 1000 classifiers out of 5171
-Trained 2000 classifiers out of 5171
-Trained 3000 classifiers out of 5171
-Trained 4000 classifiers out of 5171
-Trained 5000 classifiers out of 5171
-Chose classifier: Weak Clf (threshold=-51, polarity=-1, [RectangleRegion(10, 0, 1, 7)], [RectangleRegion(9, 0, 1, 7)] with accuracy: 0.203048 and alpha: 13.251413
-the classifier on 2349 testing data have 1589 acc, 328 nf, 432 pf
-the acc rate is 0.676458, false negative is 0.139634, false postive is 0.183908
---------------------------------------------------------------------
-the 10 round adboost begin:
-Trained 1000 classifiers out of 5171
-Trained 2000 classifiers out of 5171
-Trained 3000 classifiers out of 5171
-Trained 4000 classifiers out of 5171
-Trained 5000 classifiers out of 5171
-Chose classifier: Weak Clf (threshold=151, polarity=-1, [RectangleRegion(7, 0, 1, 9)], [RectangleRegion(6, 0, 1, 9)] with accuracy: 0.824742 and alpha: 10.033712
-the classifier on 2349 testing data have 1805 acc, 347 nf, 197 pf
-the acc rate is 0.768412, false negative is 0.147722, false postive is 0.083865
---------------------------------------------------------------------
-the 11 round adboost begin:
-Trained 1000 classifiers out of 5171
-Trained 2000 classifiers out of 5171
-Trained 3000 classifiers out of 5171
-Trained 4000 classifiers out of 5171
-Trained 5000 classifiers out of 5171
-Chose classifier: Weak Clf (threshold=114, polarity=-1, [RectangleRegion(4, 6, 6, 3)], [RectangleRegion(4, 9, 6, 3)] with accuracy: 0.721649 and alpha: 13.737215
-the classifier on 2349 testing data have 1811 acc, 284 nf, 254 pf
-the acc rate is 0.770966, false negative is 0.120903, false postive is 0.108131
---------------------------------------------------------------------
-the 12 round adboost begin:
-Trained 1000 classifiers out of 5171
-Trained 2000 classifiers out of 5171
-Trained 3000 classifiers out of 5171
-Trained 4000 classifiers out of 5171
-Trained 5000 classifiers out of 5171
-Chose classifier: Weak Clf (threshold=-603, polarity=1, [RectangleRegion(5, 9, 3, 1)], [RectangleRegion(8, 9, 3, 1), RectangleRegion(2, 9, 3, 1)] with accuracy: 0.827432 and alpha: 12.896652
-the classifier on 2349 testing data have 1867 acc, 343 nf, 139 pf
-the acc rate is 0.794806, false negative is 0.146020, false postive is 0.059174
---------------------------------------------------------------------
-the 13 round adboost begin:
-Trained 1000 classifiers out of 5171
-Trained 2000 classifiers out of 5171
-Trained 3000 classifiers out of 5171
-Trained 4000 classifiers out of 5171
-Trained 5000 classifiers out of 5171
-Chose classifier: Weak Clf (threshold=-3661, polarity=-1, [RectangleRegion(4, 4, 4, 6)], [RectangleRegion(8, 4, 4, 6), RectangleRegion(0, 4, 4, 6)] with accuracy: 0.220977 and alpha: 14.441240
-the classifier on 2349 testing data have 1828 acc, 322 nf, 199 pf
-the acc rate is 0.778203, false negative is 0.137080, false postive is 0.084717
-[(4, 4, 4, 6)],[(8, 4, 4, 6), (0, 4, 4, 6)]
---------------------------------------------------------------------
-the 14 round adboost begin:
-Trained 1000 classifiers out of 5171
-Trained 2000 classifiers out of 5171
-Trained 3000 classifiers out of 5171
-Trained 4000 classifiers out of 5171
-Trained 5000 classifiers out of 5171
-Chose classifier: Weak Clf (threshold=-3896, polarity=1, [RectangleRegion(4, 4, 4, 6)], [RectangleRegion(8, 4, 4, 6), RectangleRegion(0, 4, 4, 6)] with accuracy: 0.802779 and alpha: 14.412803
-the classifier on 2349 testing data have 1866 acc, 350 nf, 133 pf
-the acc rate is 0.794381, false negative is 0.149000, false postive is 0.056620
---------------------------------------------------------------------
-the 15 round adboost begin:
-Trained 1000 classifiers out of 5171
-Trained 2000 classifiers out of 5171
-Trained 3000 classifiers out of 5171
-Trained 4000 classifiers out of 5171
-Trained 5000 classifiers out of 5171
-Chose classifier: Weak Clf (threshold=-3251, polarity=-1, [RectangleRegion(11, 2, 3, 7)], [RectangleRegion(14, 2, 3, 7), RectangleRegion(8, 2, 3, 7)] with accuracy: 0.223218 and alpha: 14.576724
-the classifier on 2349 testing data have 1812 acc, 325 nf, 212 pf
-the acc rate is 0.771392, false negative is 0.138357, false postive is 0.090251
-[(11, 2, 3, 7)],[(14, 2, 3, 7),(8, 2, 3, 7)]
---------------------------------------------------------------------
-the 16 round adboost begin:
-Trained 1000 classifiers out of 5171
-Trained 2000 classifiers out of 5171
-Trained 3000 classifiers out of 5171
-Trained 4000 classifiers out of 5171
-Trained 5000 classifiers out of 5171
-Chose classifier: Weak Clf (threshold=-2559, polarity=1, [RectangleRegion(11, 5, 3, 5)], [RectangleRegion(14, 5, 3, 5), RectangleRegion(8, 5, 3, 5)] with accuracy: 0.819812 and alpha: 14.456879
-the classifier on 2349 testing data have 1864 acc, 356 nf, 129 pf
-the acc rate is 0.793529, false negative is 0.151554, false postive is 0.054917
---------------------------------------------------------------------
-the 17 round adboost begin:
-Trained 1000 classifiers out of 5171
-Trained 2000 classifiers out of 5171
-Trained 3000 classifiers out of 5171
-Trained 4000 classifiers out of 5171
-Trained 5000 classifiers out of 5171
-Chose classifier: Weak Clf (threshold=-489, polarity=-1, [RectangleRegion(11, 6, 3, 1)], [RectangleRegion(14, 6, 3, 1), RectangleRegion(8, 6, 3, 1)] with accuracy: 0.219632 and alpha: 14.487232
-the classifier on 2349 testing data have 1803 acc, 339 nf, 207 pf
-the acc rate is 0.767561, false negative is 0.144317, false postive is 0.088123
---------------------------------------------------------------------
-the 18 round adboost begin:
-Trained 1000 classifiers out of 5171
-Trained 2000 classifiers out of 5171
-Trained 3000 classifiers out of 5171
-Trained 4000 classifiers out of 5171
-Trained 5000 classifiers out of 5171
-Chose classifier: Weak Clf (threshold=-1540, polarity=1, [RectangleRegion(11, 6, 3, 3)], [RectangleRegion(14, 6, 3, 3), RectangleRegion(8, 6, 3, 3)] with accuracy: 0.815778 and alpha: 14.485626
-the classifier on 2349 testing data have 1847 acc, 365 nf, 137 pf
-the acc rate is 0.786292, false negative is 0.155385, false postive is 0.058323
---------------------------------------------------------------------
-the 19 round adboost begin:
-Trained 1000 classifiers out of 5171
-Trained 2000 classifiers out of 5171
-Trained 3000 classifiers out of 5171
-Trained 4000 classifiers out of 5171
-Trained 5000 classifiers out of 5171
-Chose classifier: Weak Clf (threshold=-1006, polarity=-1, [RectangleRegion(11, 5, 3, 2)], [RectangleRegion(14, 5, 3, 2), RectangleRegion(8, 5, 3, 2)] with accuracy: 0.213357 and alpha: 14.482982
-the classifier on 2349 testing data have 1790 acc, 340 nf, 219 pf
-the acc rate is 0.762026, false negative is 0.144742, false postive is 0.093231
+Adaboost rounds: 0
+Total accuracy: 0.768412 (1882/2349)
+False Positive: 0.083865 (197/2349)
+False Negative: 0.147722 (347/2349)
+Adaboost rounds: 1
+Total accuracy: 0.801192 (1882/2349)
+False Positive: 0.121328 (285/2349)
+False Negative: 0.077480 (182/2349)
+Adaboost rounds: 2
+Total accuracy: 0.794806 (1882/2349)
+False Positive: 0.059174 (139/2349)
+False Negative: 0.146020 (343/2349)
+Adaboost rounds: 3
+Total accuracy: 0.778203 (1882/2349)
+False Positive: 0.137080 (322/2349)
+False Negative: 0.084717 (199/2349)
+Adaboost rounds: 4
+Total accuracy: 0.794381 (1882/2349)
+False Positive: 0.056620 (133/2349)
+False Negative: 0.149000 (350/2349)
+Adaboost rounds: 5
+Total accuracy: 0.771392 (1812/2349)
+False Positive: 0.090251 (212/2349)
+False Negative: 0.138357 (325/2349)
+Adaboost rounds: 6
+Total accuracy: 0.793529 (1864/2349)
+False Positive: 0.054917 (129/2349)
+False Negative: 0.151554 (356/2349)
+Adaboost rounds: 7
+Total accuracy: 0.767561 (1803/2349)
+False Positive: 0.088123 (207/2349)
+False Negative: 0.144317 (339/2349)
+Adaboost rounds: 8
+Total accuracy: 0.786292 (1847/2349)
+False Positive: 0.058323 (137/2349)
+False Negative: 0.155385 (365/2349)
+Adaboost rounds: 9
+Total accuracy: 0.762026 (1882/2349)
+False Positive: 0.093231 (219/2349)
+False Negative: 0.144742 (340/2349)
 ```
 
 ### 3. Adjust the threshold  
@@ -714,6 +546,8 @@ the acc rate is 0.762026, false negative is 0.144742, false postive is 0.093231
 <b>(1) Choose empirical error as criterion  
  
  ![1](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/Result/emp.png?raw=true)
+ 
+ If empirical error was chosen as criterion, with the increase of number of rounds, the total accuracy will increase and at the end round, it is about 0.80. There’s fluctuation at first several rounds, and then going to stable.
  
 <b>(2) Choose false postive as criterion  
  
