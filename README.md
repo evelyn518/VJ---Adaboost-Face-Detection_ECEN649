@@ -444,7 +444,7 @@ happens?
  <b>5.	There are 8100 type 5 (four) features.  
 
 ### 2. Build Adaboost Detector  
-• Feature number 1:
+• Feature number :
  <br>Type: Two Horizontal
  <br>Position: (10,3),(9,3)
  <br>Width: 1
@@ -454,10 +454,10 @@ happens?
  <br>False negative: 0.121328
  <br>False postive: 0.077480
 
-![Feature for 1 round Adaboost](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/images%20for%20vj/294171922150336951.png?raw=true)  
+![Feature for 1 round Adaboost](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/images%20for%20vj/round1.png?raw=true)  
 
-• Feature number 1:
- <br>Type: Two Horizontal
+• Feature number :
+ <br>Type: Two Vertical
  <br>Position: (3,2),(3,6)
  <br>Width: 1
  <br>Length: 4
@@ -466,10 +466,10 @@ happens?
  <br>False negative: 0.115368
  <br>False postive: 0.166454
  
-![Feature for 3 rounds Adaboost](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/images%20for%20vj/5619714554937557.png?raw=true)  
+![Feature for 3 rounds Adaboost](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/images%20for%20vj/round2.png?raw=true)  
 
-• Feature number 1:
- <br>Type: Two Horizontal
+• Feature number :
+ <br>Type: Four
  <br>Position: (8,5),(7,9),(7,5),(8,9)
  <br>Width: 1
  <br>Length: 4
@@ -478,10 +478,10 @@ happens?
  <br>False negative: 0.131545
  <br>False postive: 0.112388
  
-![Feature for 5 rounds Adaboost](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/images%20for%20vj/867020202641414758.png?raw=true)  
+![Feature for 5 rounds Adaboost](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/images%20for%20vj/round5.png?raw=true)  
 
-• Feature number 1:
- <br>Type: Two Horizontal
+• Feature number :
+ <br>Type: Three Horizontal
  <br>Position: (11,2),(14,2),(8,2)
  <br>Width: 3
  <br>Length: 7
@@ -490,7 +490,7 @@ happens?
  <br>False negative: 0.131545
  <br>False postive: 0.112388
  
-![Feature for 10 rounds Adaboost](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/images%20for%20vj/105990036188532545.png)
+![Feature for 10 rounds Adaboost](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/images%20for%20vj/round10.png?raw=true)
 
 
 ### 3. Adjust the threshold  
@@ -523,7 +523,7 @@ Orginal photo1:
 
 After detecting photo1:  
 
-![1](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/after/674420501518072338.jpg?raw=true)  
+![1](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/after/1.jpg?raw=true)  
 
 Orginal photo2:  
 
@@ -531,7 +531,7 @@ Orginal photo2:
 
 After detecting photo1:  
 
-![2](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/after/641611124257740203.jpg?raw=true)  
+![2](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/after/2.jpg?raw=true)  
 
 Orginal photo3:  
 
@@ -539,7 +539,7 @@ Orginal photo3:
 
 After detecting photo1:  
 
-![3](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/after/386615185158575392.jpg?raw=true)  
+![3](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/after/3.jpg?raw=true)  
 
 Orginal photo4:  
 
@@ -547,7 +547,7 @@ Orginal photo4:
 
 After detecting photo4:  
 
-![4](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/after/319877150167114035.jpg?raw=true)
+![4](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/after/4.jpg?raw=true)
 
 
 
