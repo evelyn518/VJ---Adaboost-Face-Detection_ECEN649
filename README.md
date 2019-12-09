@@ -497,23 +497,27 @@ happens?
 
 <b>(1) Choose empirical error as criterion  
  
- ![1](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/images%20for%20vj/Barcelona-star-Lionel-Messi-scored-a-hat-trick-against-RCD-Mallorca-1214446.jpg?raw=true)
+ ![1]https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/Result/emp.png?raw=true)
  
 <b>(2) Choose false postive as criterion  
  
- ![1](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/images%20for%20vj/Barcelona-star-Lionel-Messi-scored-a-hat-trick-against-RCD-Mallorca-1214446.jpg?raw=true)  
+ ![1](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/Result/fp.png?raw=true)  
  
 <b>(3) Choose false negative as criterion  
  
- ![1](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/images%20for%20vj/Barcelona-star-Lionel-Messi-scored-a-hat-trick-against-RCD-Mallorca-1214446.jpg?raw=true)  
+ ![1](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/Result/fn.png?raw=true)  
  
 <b>Table of different criterion  
  
 |Criterion|Total Accuracy|False Positive|False Negative|
 |:--|:--|:--|:--
-Empirical Error|||
-False Positive|||
-False Negative|||
+Empirical Error|0.80|0.14|0.12
+False Positive|0.78|0.00|0.18
+False Negative|0.12|0.18|0.17
+
+If empricial error was chosen as criterion, with the increase of number of rounds, the total accuracy will increase and at the end round, it is about 0.80. 
+If false positive was chosen as criterion, with the increase of number of rounds, the total accuracy will decrease and at the end round, it is about 0.00. 
+If false negative was chosen as criterion, with the increase of number of rounds, the total accuracy will decrease and at the end round, it is about 0.17. 
 
 
 ### 4. Detecting in real-world photos
@@ -553,5 +557,5 @@ After detecting photo4:
 
 
 ## Future Work
-In this project, the classifers of the face detectors with 1,3,5,10 rounds built and adjusted the threshold. If time is avaliable, (改进算法)
+In this project, the classifers of the face detectors with 1,3,5,10 rounds built and adjusted the threshold. If time is avaliable, I could try to finish building the cascading system.
 
