@@ -495,8 +495,10 @@ Give examples
  
 |Criterion|Total Accuracy|False Positive|False Negative|
 |:--|:--|:--|:--
-numpy|1.17.3|for scientific computing, supporting large, multidimensional arrays and matrices
-os||for loading and generating data
+Empirical Error|||
+False Positive|||
+False Negative|||
+
 
 ### 4. Detecting in real-world photos
 Orginal photo1:  
