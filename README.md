@@ -489,7 +489,7 @@ After detecting photo1:
 
 Orginal photo2:  
 
-![2](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/images%20for%20vj/Barcelona-star-Lionel-Messi-scored-a-hat-trick-against-RCD-Mallorca-1214446.jpg?raw=true)  
+![2](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/images%20for%20vj/MV5BNGE0M2M3NjMtN2ZkZC00NzAyLTgzMWItOGE5ZjFkNTU1NDNjXkEyXkFqcGdeQXVyMzE1MDY2NDg@._V1_.jpg?raw=true)  
 
 After detecting photo1:  
 
@@ -497,7 +497,7 @@ After detecting photo1:
 
 Orginal photo3:  
 
-![3](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/images%20for%20vj/Barcelona-star-Lionel-Messi-scored-a-hat-trick-against-RCD-Mallorca-1214446.jpg?raw=true)  
+![3](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/images%20for%20vj/maxresdefault.jpg?raw=true)  
 
 After detecting photo1:  
 
@@ -505,11 +505,11 @@ After detecting photo1:
 
 Orginal photo4:  
 
-![4](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/images%20for%20vj/Barcelona-star-Lionel-Messi-scored-a-hat-trick-against-RCD-Mallorca-1214446.jpg?raw=true)  
+![4](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/images%20for%20vj/La-Liga-Champions_social-image.jpg?raw=true)  
 
 After detecting photo4:  
 
-![4](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/after/674420501518072338.jpg?raw=true)
+![4](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/after/319877150167114035.jpg?raw=true)
 
 
 
