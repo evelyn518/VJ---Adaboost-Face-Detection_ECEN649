@@ -740,6 +740,20 @@ If false negative was chosen as criterion, with the increase of number of rounds
 
 
 ### 4. Detecting in real-world photos
+
+Open cv was used to read image and construt cascade classifers.  
+
+The algorithm has four stages:  
+
+Haar Feature Selection  
+
+Creating an Integral Image  
+
+Adaboost Training  
+
+Cascading Classifiers  
+
+
 Orginal photo1:  
 
 ![1](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/images%20for%20vj/Barcelona-star-Lionel-Messi-scored-a-hat-trick-against-RCD-Mallorca-1214446.jpg?raw=true)  
