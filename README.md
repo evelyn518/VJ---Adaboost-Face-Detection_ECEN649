@@ -553,17 +553,22 @@ False Negative: 0.144742 (340/2349)
  
  ![1](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/Result/fp.png?raw=true)  
  
+ If false positive was chosen as criterion, with the increase of number of rounds, the rate of false positive will decrease and at the end round, it is about 0.00. At the same time, false negative will increase, and the total accuracy will decrease because the false positive decrease much more than increase of false negative. 
+ 
+ 
 <b>(3) Choose false negative as criterion  
  
  ![1](https://github.com/evelyn518/VJ---Adaboost-Face-Detection_ECEN649/blob/master/Result/fn.png?raw=true)  
+ 
+ If false negative was chosen as criterion, with the increase of number of rounds, the false negative rate will decrease and at the end round, it is about 0.17. At the same time, false negative will increase, and the total accuracy will decrease because the false negative decrease much more than increase of false positive. 
  
 <b>Table of different criterion  
  
 |Criterion|Total Accuracy|False Positive|False Negative|
 |:--|:--|:--|:--
 Empirical Error|0.80|0.14|0.12
-False Positive|0.78|0.00|0.18
-False Negative|0.12|0.18|0.17
+False Positive|0.78|0.00|0.22
+False Negative|0.63|0.25|0.17
 
 If empricial error was chosen as criterion, with the increase of number of rounds, the total accuracy will increase and at the end round, it is about 0.80.  
 
